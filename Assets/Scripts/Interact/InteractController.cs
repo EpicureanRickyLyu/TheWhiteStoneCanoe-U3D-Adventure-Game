@@ -133,6 +133,9 @@ public class InteractController : MonoBehaviour
             case "Map":
             ShowPanel();
             break;
+            case "Boat":
+            ShowPanel();
+            break;
             case "Collider":
               HidePanel();
             break;

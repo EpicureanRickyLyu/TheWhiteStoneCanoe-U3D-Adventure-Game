@@ -158,7 +158,25 @@ public void DOAction(GameObject ob)
         Dialog.ShowDialog(ob.name);
         AddInBag(Item.ItemType.Map,ob);
         break;
+        case "Boat":
+        Dialog.ShowDialog(ob.name);
+        BoatModel();
+        break;
     }
+}
+private bool boatmodel=false;
+public void BoatModel()
+{
+    Debug.Log("drive boat");
+    GameObject go = GameObject.Find("DrivePos");
+    if(go==null)
+    return;
+    PlayerInfo.PlayerInstance.transform.SetParent(go.transform);
+    PlayerInfo.PlayerInstance.GetComponent<CharacterChontrol>().Movable = false;
+    PlayerInfo.PlayerInstance.GetComponent<CharacterChontrol>().bootmodel = true;
+    boatmodel = true;
+    go.transform.root.GetComponent<BoatControl>().drivemodel = true;
+    
 }
 void Update()
 {
@@ -169,6 +187,17 @@ void Update()
     if(Input.GetKeyDown(KeyCode.Alpha1))
     {
         UseItem(new Item{itemType=Item.ItemType.Food,amount=1});
+    }
+    if(boatmodel==true)
+    {
+        PlayerInfo.PlayerInstance.transform.localPosition = Vector3.zero;
+        
+    }
+    else
+    {
+        PlayerInfo.PlayerInstance.transform.SetParent(null);
+     
+
     }
 }
 

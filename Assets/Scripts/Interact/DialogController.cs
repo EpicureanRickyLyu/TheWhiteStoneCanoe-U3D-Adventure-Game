@@ -59,7 +59,10 @@ public class DialogController : MonoBehaviour
  
         break;
         case "Map":
-
+        go.SetText("Seems like the location of the land of the soul is recorded on it");
+        break;
+        case "Boat":
+        go.SetText("I can reach the center of the lake by this canoe");
         break;
     }
         

@@ -29,6 +29,7 @@ public class CharacterChontrol : MonoBehaviour
     private WeaponSystem WeaponControl;
     public ItemAction itemControl;
     private GameObject Mapcamera;
+    public bool bootmodel = false;
 
     // Use this for initialization
     void Start()
@@ -42,7 +43,8 @@ public class CharacterChontrol : MonoBehaviour
         Mapcamera = GameObject.FindGameObjectWithTag("Map");
         if(Mapcamera!=null)
         Mapcamera.SetActive(false);
-        Movable = true;
+        Physics.autoSyncTransforms = true;// make the value for TELEPORT position could work
+        // Movable = true;
         
     }
     public void GetWorm(float value)
@@ -65,8 +67,6 @@ public class CharacterChontrol : MonoBehaviour
     }
     private void CamMoveControl()
     {
-        
-        playerController.Move(playerController.transform.TransformDirection(direction * Time.deltaTime * speed));
 
         RotationX += agretctCamera.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mousespeed;
       
@@ -143,7 +143,9 @@ public class CharacterChontrol : MonoBehaviour
             this.GetComponent<AnimatorAction>().SetRunfalse();
             this.GetComponent<AnimatorAction>().Setwalkfalse();
 
-        }       
+        }      
+
+        playerController.Move(playerController.transform.TransformDirection(direction * Time.deltaTime * speed)); 
 
     }
     private bool mapactive = false;
@@ -192,6 +194,10 @@ public class CharacterChontrol : MonoBehaviour
         if(Movable)
         {
             PlayerMoverControl();
+            CamMoveControl();
+        }
+        if(bootmodel)
+        {
             CamMoveControl();
         }
 

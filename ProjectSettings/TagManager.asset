@@ -10,6 +10,7 @@ TagManager:
   - Map
   - BlackMask
   - SceneController
+  - Boat
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Item
   - Player
   - Map
-  - 
+  - Boat
   - 
   - 
   - 

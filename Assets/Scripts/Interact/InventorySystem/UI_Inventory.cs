@@ -35,4 +35,7 @@ public class UI_Inventory : MonoBehaviour
           go.GetComponentInChildren<TextMeshProUGUI>().SetText(item.amount.ToString());
         }
     }
+
+
+
 }
