@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hightlight
+  m_Shader: {fileID: -6465566751694194690, guid: c0c09b5fb52aea74db106494d0fcbdad, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_69d28aafe948477db7d2eef16c33a138: 0.1
+    - Vector1_b1f90df552fc4c5595500457ad1ce608: 1
+    - Vector1_ce8d829641d04598b4c6097697216a26: 0.8
+    - _EffectDetail: 0.8
+    - _LightSpeed: 0.1
+    - _Thickness: 1.15
+    m_Colors:
+    - Color_2a7a99bbace2410eac7548b1cb9a54b9: {r: 0.9622642, g: 0.1652991, b: 0.1488785, a: 0}
+    - _OutlineColor: {r: 0.9622642, g: 0.1652991, b: 0.1488785, a: 0}
+  m_BuildTextureStacks: []

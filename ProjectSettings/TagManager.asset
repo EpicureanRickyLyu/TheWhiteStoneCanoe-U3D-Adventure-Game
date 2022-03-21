@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - PlayerInfo
+  - Item
+  - Map
+  - BlackMask
+  - SceneController
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Particle
+  - Water
+  - UI
+  - Weapon
+  - Enemy
+  - Item
+  - Player
+  - Map
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 831991041
+    locked: 0
+  - name: Map
+    uniqueID: 2383645913
+    locked: 0
