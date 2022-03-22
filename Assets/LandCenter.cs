@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class LandCenter : MonoBehaviour
 {
+    public GameObject Boat;
+    void Start()
+    {
+
+    }
     void OnTriggerEnter(Collider collider)
     {   
         if(collider.tag =="Boat")
         {
             Debug.Log("boat in");
-            collider.transform.root.GetComponent<BoatControl>().GetOff();
-
-            PlayerInfo.PlayerInstance.transform.SetParent(null,true);
-            PlayerInfo.PlayerInstance.transform.position = PlayerInfo.PlayerInstance.transform.TransformPoint(PlayerInfo.PlayerInstance.transform.position);
+            Boat.GetComponent<BoatControl>().GetOff();
            
             PlayerInfo.PlayerInstance.GetComponent<CharacterChontrol>().Movable = true;
             PlayerInfo.PlayerInstance.GetComponent<CharacterChontrol>().bootmodel = false;
-
+            PlayerInfo.PlayerInstance.GetComponentInChildren<ItemAction>().boatmodel = false;
         }
     }
 }

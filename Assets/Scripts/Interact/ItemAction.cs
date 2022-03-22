@@ -9,9 +9,10 @@ private Inventory inventory;
  [SerializeField] private UI_Inventory uI_Inventory;
 private DialogController Dialog;
 private bool door,box,Updraw,DownDraw;
+private GameObject Drivepos;
 void Start()
 {
-    
+    Drivepos = GameObject.Find("DrivePos");
     inventory = new Inventory(UseItem);
     Dialog = GetComponent<DialogController>();
     if(uI_Inventory!=null)
@@ -51,6 +52,8 @@ public void AddInBag(Item.ItemType item,GameObject ob)
 {
     inventory.Additem(new Item{itemType=item,amount=1});
     // uI_Inventory.RefreshInventoryItems();
+    if(ob.name=="Map")
+    Destroy(ob.transform.parent.gameObject);
     if(ob.name=="bows")
     Destroy(ob.transform.parent.gameObject);
     else
@@ -159,27 +162,33 @@ public void DOAction(GameObject ob)
         AddInBag(Item.ItemType.Map,ob);
         break;
         case "Boat":
+        if(GetComponent<InteractController>().driveboat)
+        {
         Dialog.ShowDialog(ob.name);
         BoatModel();
+        }
+        
         break;
     }
 }
-private bool boatmodel=false;
+
+public bool boatmodel=false;
 public void BoatModel()
 {
     Debug.Log("drive boat");
-    GameObject go = GameObject.Find("DrivePos");
-    if(go==null)
+    if(Drivepos==null)
     return;
-    PlayerInfo.PlayerInstance.transform.SetParent(go.transform);
     PlayerInfo.PlayerInstance.GetComponent<CharacterChontrol>().Movable = false;
     PlayerInfo.PlayerInstance.GetComponent<CharacterChontrol>().bootmodel = true;
     boatmodel = true;
-    go.transform.root.GetComponent<BoatControl>().drivemodel = true;
+    Drivepos.transform.root.GetComponent<BoatControl>().drivemodel = true;
+    GetComponent<InteractController>().driveboat=false;
     
 }
 void Update()
 {
+
+    
     if(Input.GetKeyDown(KeyCode.Alpha2))
     {
         UseItem(new Item{itemType=Item.ItemType.Fur,amount=1});
@@ -188,17 +197,16 @@ void Update()
     {
         UseItem(new Item{itemType=Item.ItemType.Food,amount=1});
     }
-    if(boatmodel==true)
+    if(boatmodel)
     {
-        PlayerInfo.PlayerInstance.transform.localPosition = Vector3.zero;
-        
+        PlayerInfo.PlayerInstance.transform.position = Drivepos.transform.position;    
     }
     else
     {
-        PlayerInfo.PlayerInstance.transform.SetParent(null);
-     
 
     }
+
+
 }
 
 }

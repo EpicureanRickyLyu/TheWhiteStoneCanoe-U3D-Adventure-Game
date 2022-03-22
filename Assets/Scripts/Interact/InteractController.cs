@@ -75,6 +75,7 @@ public class InteractController : MonoBehaviour
         InfoPanel.GetComponentInChildren<TextMeshProUGUI>().text =
          name +" Press E to Interact";
     }
+    public bool driveboat = true;
     public void ShowInfo()
     {
       
@@ -134,7 +135,10 @@ public class InteractController : MonoBehaviour
             ShowPanel();
             break;
             case "Boat":
-            ShowPanel();
+            if(driveboat)
+            {
+              ShowPanel();
+            }
             break;
             case "Collider":
               HidePanel();

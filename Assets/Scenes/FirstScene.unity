@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodValue: 0
   uI_Inventory: {fileID: 1167669681}
+  boatmodel: 0
 --- !u!114 &53225485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +434,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   InfoPanel: {fileID: 1868335265}
   interactDistance: 2
+  driveboat: 1
 --- !u!1 &84492095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,6 +1253,7 @@ MonoBehaviour:
   agretctCamera: {fileID: 1878885415}
   Movable: 1
   itemControl: {fileID: 0}
+  bootmodel: 0
 --- !u!114 &231856288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5560,6 +5563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fur: {fileID: 7084622579872559954, guid: 4e7967aa067d1b148ab37bc3e7063a72, type: 3}
+  Food: {fileID: 0}
   BowSprite: {fileID: 21300000, guid: 9da20bd5b86727c48b45bb8ea02ba71e, type: 3}
   ArrowsSprite: {fileID: 0}
   HandSprite: {fileID: 21300000, guid: 13c17e2675734e645b233246c2b325a4, type: 3}
@@ -7807,6 +7811,18 @@ PrefabInstance:
     - target: {fileID: 1714878129552234222, guid: 78d19c54727c18c4397aa0afa07253ff, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714878129552234222, guid: 78d19c54727c18c4397aa0afa07253ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2746098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714878129552234222, guid: 78d19c54727c18c4397aa0afa07253ff, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.047712177
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714878129552234222, guid: 78d19c54727c18c4397aa0afa07253ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.21615362
       objectReference: {fileID: 0}
     - target: {fileID: 1714878129552234222, guid: 78d19c54727c18c4397aa0afa07253ff, type: 3}
       propertyPath: m_LocalPosition.x

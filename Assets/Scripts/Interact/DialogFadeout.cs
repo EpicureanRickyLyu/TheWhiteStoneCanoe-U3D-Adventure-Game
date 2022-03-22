@@ -15,8 +15,8 @@ public class DialogFadeout : MonoBehaviour
      
         alpha -= Time.deltaTime*FadeSpeed;
         gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, alpha); 
-        if(alpha<=0)
-        this.gameObject.SetActive(false);
+        // if(alpha<=0)
+        // this.gameObject.SetActive(false);
      
     }
     void Update()
