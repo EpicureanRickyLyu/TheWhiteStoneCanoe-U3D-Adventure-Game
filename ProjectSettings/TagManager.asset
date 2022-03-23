@@ -11,6 +11,8 @@ TagManager:
   - BlackMask
   - SceneController
   - Boat
+  - wood
+  - soundcontrol
   layers:
   - Default
   - TransparentFX

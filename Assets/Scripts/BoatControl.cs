@@ -21,6 +21,12 @@ public class BoatControl : MonoBehaviour
         
         this.transform.Translate(0,0,MoveY*movespeed*Time.deltaTime);
         GetComponentInChildren<Animator>().SetBool("Driving",true);
+        if(!GetComponent<AudioSource>().isPlaying)
+        {
+            if(GetComponent<AudioSource>().clip!=null)
+            GetComponent<AudioSource>().Play();
+        }
+        
 
         }
         else

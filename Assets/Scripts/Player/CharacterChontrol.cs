@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterChontrol : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class CharacterChontrol : MonoBehaviour
     public ItemAction itemControl;
     private GameObject Mapcamera;
     public bool bootmodel = false;
+    public AudioSource SoundControl;
+    public bool outroom=false;
 
     // Use this for initialization
     void Start()
@@ -45,6 +48,12 @@ public class CharacterChontrol : MonoBehaviour
         Mapcamera.SetActive(false);
         Physics.autoSyncTransforms = true;// make the value for TELEPORT position could work
         // Movable = true;
+        SoundControl =GameObject.FindWithTag("soundcontrol").GetComponent<AudioSource>();
+
+        if(SceneManager.GetActiveScene().buildIndex!=2)
+        {
+            outroom=true;
+        }
         
     }
     public void GetWorm(float value)
@@ -118,9 +127,21 @@ public class CharacterChontrol : MonoBehaviour
 
         if(_horizontal!=0||_vertical!=0)
         {
+            if(!SoundControl.isPlaying)
+            SoundControl.Play();
+
+
+
             this.GetComponent<AnimatorAction>().Setwalktrue();
             if(Input.GetKeyDown(KeyCode.LeftShift))
         {
+        if(outroom)
+        {
+            SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.Groundrunning);
+
+        }
+        else
+        SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.woodrunnning);
             if(UIControl.GetComponent<PlayerUI>().EnduranceBar.transform.GetChild(0).GetComponent<Image>().fillAmount != 0)
         {
             speed=runspeed;
@@ -129,13 +150,20 @@ public class CharacterChontrol : MonoBehaviour
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-      
+        if(outroom)
+        {
+            SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.Groundwalk);
+
+        }
+        else
+        SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.woodwalk);
+
+
         this.GetComponent<AnimatorAction>().SetRunfalse();
         this.GetComponent<AnimatorAction>().Setwalktrue();
         speed = walkspeed;
-    
-        }
 
+        }
         }
         else
         {
@@ -146,7 +174,7 @@ public class CharacterChontrol : MonoBehaviour
         }      
 
         playerController.Move(playerController.transform.TransformDirection(direction * Time.deltaTime * speed)); 
-
+        
     }
     private bool mapactive = false;
     void Update()

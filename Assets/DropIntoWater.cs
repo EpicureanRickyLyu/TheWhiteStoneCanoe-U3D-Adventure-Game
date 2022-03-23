@@ -16,6 +16,8 @@ public class DropIntoWater : MonoBehaviour
         {
             BlackMask.GetComponent<Animator>().SetTrigger("Fadeout");
             BlackMask.GetComponent<Animator>().speed = 2f;
+            if(GetComponent<AudioSource>().clip!=null)
+            GetComponent<AudioSource>().Play();
             Invoke("ReLoad",1f);
             
         }

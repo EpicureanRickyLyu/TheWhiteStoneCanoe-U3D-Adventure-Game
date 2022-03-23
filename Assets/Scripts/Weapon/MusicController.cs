@@ -10,7 +10,10 @@ public class MusicController:MonoBehaviour
 		public string takeout;
 		public string Draw;
 		public string Shoot;
-		public string snowwalk;
+		public string woodwalk;
+		public string woodrunnning;
+		public string Groundwalk;
+		public string Groundrunning;
 		public string DrawBow;
 		public string Boaridle,BoarAttack,BoarDead,BoarAlert;
 		void Awake ()
