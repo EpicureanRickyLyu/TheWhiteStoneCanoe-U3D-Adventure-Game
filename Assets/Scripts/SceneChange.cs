@@ -21,6 +21,6 @@ public class SceneChange : MonoBehaviour
     }
     private void LoadDelay()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

@@ -12,8 +12,13 @@ public class SceneController : MonoBehaviour
     }
     public void ChangeScene()
     {
-        nowScene += 1;
+        if(nowScene==0)
+        nowScene += 2;
+        else
+        nowScene+=1;
         SceneManager.LoadScene(nowScene);
+        if(nowScene==5)
+        nowScene=0;
     }
     void Update()
     {

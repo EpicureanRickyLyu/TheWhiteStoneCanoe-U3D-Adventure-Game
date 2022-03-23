@@ -15,7 +15,7 @@ public class Inventory
         itemList = new List<Item>();
         Debug.Log("Inventory");
         // Additem(new Item{itemType=Item.ItemType.Hand,amount=1});
-        if(SceneManager.GetActiveScene().name=="SampleScene")
+        if(SceneManager.GetActiveScene().name=="SECONDSCENE")
         {
         Additem(new Item{itemType=Item.ItemType.Bow,amount=1});
         Additem(new Item{itemType=Item.ItemType.Fur,amount=1});

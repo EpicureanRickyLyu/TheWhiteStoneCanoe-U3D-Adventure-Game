@@ -40,6 +40,7 @@ public class EscPanel : MonoBehaviour
     }
     public void Exit()
     {
+        Application.Quit();
         
     }
     void Update()

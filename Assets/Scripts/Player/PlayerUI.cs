@@ -7,6 +7,7 @@ public class PlayerUI : MonoBehaviour
 {
     public GameObject HpBar,EnduranceBar,ColdBar,AttackedPanel;
     public float ColdLoseSpeed,EndurLossSpeed;
+    public GameObject DeathPanel;
     void Start()
     {
         HpBar=this.transform.GetChild(0).gameObject;
@@ -47,6 +48,10 @@ public class PlayerUI : MonoBehaviour
     {
         float value = Time.deltaTime*ColdLoseSpeed;
         ColdBar.transform.GetChild(0).GetComponent<Image>().fillAmount -= value;
+        if(ColdBar.transform.GetChild(0).GetComponent<Image>().fillAmount<=0)
+        {
+            DeathPanel.SetActive(true);
+        }
     }
     public void GetWorm(float value)
     {

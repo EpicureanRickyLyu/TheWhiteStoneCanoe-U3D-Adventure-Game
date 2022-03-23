@@ -11,6 +11,15 @@ public class DialogController : MonoBehaviour
     {
      
     }
+    public void SetTemporaryText(string st)
+    {
+        DialogPanel.SetActive(true);
+        DialogPanel.GetComponent<DialogFadeout>().alpha = 0.5f;
+        DialogPanel.GetComponentInChildren<TextMeshProUGUI>().alpha = 0.5f;
+        DialogPanel.GetComponentInChildren<TextMeshProUGUI>().SetText(st);
+
+
+    }
     public void ShowDialog(string name)
     {
         DialogPanel.SetActive(true);
