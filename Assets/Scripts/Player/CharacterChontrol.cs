@@ -153,7 +153,6 @@ public class CharacterChontrol : MonoBehaviour
         if(outroom)
         {
             SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.Groundwalk);
-
         }
         else
         SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.woodwalk);

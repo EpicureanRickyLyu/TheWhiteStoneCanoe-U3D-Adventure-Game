@@ -29,7 +29,7 @@ public class Bowarrow : MonoBehaviour
         {
             lyu = Instantiate(Arrows1,ArrowPosOnBow.transform.position,Quaternion.identity,ArrowPosOnBow) as GameObject;
             ResetTransform(lyu);
-      
+            //draw
             SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.DrawBow);
             SoundControl.Play();
             
@@ -56,8 +56,11 @@ public class Bowarrow : MonoBehaviour
     }
     void Fire(GameObject go)
     {
+        // release
         SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.Draw);
         SoundControl.Play();
+
+
         go.GetComponent<Rigidbody>().velocity = FirePoint.transform.forward*ArrowSpeed;
     }
     void ResetTransform(GameObject go)

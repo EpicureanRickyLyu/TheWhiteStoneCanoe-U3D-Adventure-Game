@@ -1205,8 +1205,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bb78e4a6f75e2024cba015ff2280fc21, type: 3}
   - {fileID: 8300000, guid: 70f6f24183d31ef489558c491e4121e7, type: 3}
   - {fileID: 8300000, guid: 8ce770e647d1f1940a8e2cc21762d1f2, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 1d5594adf03df8742893064ee4619e6b, type: 3}
+  - {fileID: 8300000, guid: 3ddba51a8ce64ff4487b9edb1b67fdc1, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   takeout: 
@@ -1214,8 +1214,8 @@ MonoBehaviour:
   Shoot: 
   woodwalk: walk2
   woodrunnning: running
-  Groundwalk: running
-  Groundrunning: walk2
+  Groundwalk: grasswalk
+  Groundrunning: GrassRunning
   DrawBow: BOW-DRAWN
   Boaridle: BoarIdle
   BoarAttack: BoarAttack
