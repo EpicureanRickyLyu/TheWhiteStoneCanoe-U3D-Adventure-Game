@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
-    public int nowScene;
+    public int nowScene=1;
     public bool Clickable;
     void Start()
     {
@@ -12,13 +12,21 @@ public class SceneController : MonoBehaviour
     }
     public void ChangeScene()
     {
-        if(nowScene==0)
-        nowScene += 2;
-        else
-        nowScene+=1;
-        SceneManager.LoadScene(nowScene);
         if(nowScene==5)
-        nowScene=0;
+        {
+            nowScene=1;
+            SceneManager.LoadScene(0);
+            return;
+        }
+        else
+        {
+            nowScene+=1;
+            SceneManager.LoadScene(nowScene);
+
+        }
+       
+        
+ 
     }
     void Update()
     {

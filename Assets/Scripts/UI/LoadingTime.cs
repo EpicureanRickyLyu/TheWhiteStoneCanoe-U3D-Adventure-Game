@@ -20,7 +20,7 @@ public class LoadingTime : MonoBehaviour
         Debug.Log(SceneControl.GetComponent<SceneController>().nowScene);
         switch(SceneControl.GetComponent<SceneController>().nowScene)
         {
-            case 0:
+            case 1:
             this.transform.root.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Chapter 0 :\n" +
         "The old man in the village once said that in the extreme south, I can reach the Land of Souls, and maybe I can find my lost wife there."; 
             break;
