@@ -8,6 +8,7 @@ public class SceneController : MonoBehaviour
     public bool Clickable;
     void Start()
     {
+        if(nowScene==1)
         DontDestroyOnLoad(this.gameObject);
     }
     public void ChangeScene()
@@ -21,9 +22,11 @@ public class SceneController : MonoBehaviour
         else
         {
             nowScene+=1;
+            Clickable = false;
             SceneManager.LoadScene(nowScene);
 
         }
+        Debug.Log("Change scene");
        
         
  
@@ -34,7 +37,7 @@ public class SceneController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             ChangeScene();
-            Clickable = false;
+            
         }
     }
 }

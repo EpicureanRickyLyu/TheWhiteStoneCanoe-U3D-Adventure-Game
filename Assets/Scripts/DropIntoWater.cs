@@ -24,7 +24,7 @@ public class DropIntoWater : MonoBehaviour
     }
     void ReLoad()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
 
     }
 }

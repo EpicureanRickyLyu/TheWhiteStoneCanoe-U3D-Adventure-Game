@@ -49,8 +49,10 @@ public class Bowarrow : MonoBehaviour
             Transform ArrowPos =  FirePoint.transform.GetChild(0);
             GameObject go = Instantiate(Arrows,ArrowPos.transform.position,Quaternion.identity) as GameObject;
             go.transform.SetParent(ArrowPos);
+            
             ResetTransform(go);
             ArrowPos.DetachChildren();
+
             Fire(go);
         }
     }
@@ -59,10 +61,11 @@ public class Bowarrow : MonoBehaviour
         // release
         SoundControl.clip = MusicController._instance.GetAudioClip(MusicController._instance.Draw);
         SoundControl.Play();
-
-
         go.GetComponent<Rigidbody>().velocity = FirePoint.transform.forward*ArrowSpeed;
+
+        
     }
+
     void ResetTransform(GameObject go)
     {
         go.transform.localPosition = Vector3.zero;
